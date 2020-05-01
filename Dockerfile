@@ -15,8 +15,8 @@ RUN git clone https://github.com/micropython/micropython.git && cd micropython &
     make
 RUN apt-get update -y && apt-get install autoconf autogen libtool -y
 RUN cd micropython/ports/unix && make submodules && make deplibs && make axtls && make && make install
-RUN cd ports/unix
-RUN make submodules
-RUN make
-RUN apt-get purge --auto-remove -y  build-essential libffi-dev git pkg-config python python3 && \
+#RUN cd ports/unix
+#RUN make submodules
+#RUN make
+#RUN apt-get purge --auto-remove -y  build-essential libffi-dev git pkg-config python python3 && \
 ENTRYPOINT ["/usr/local/bin/micropython"]
